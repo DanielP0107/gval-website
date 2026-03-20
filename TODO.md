@@ -1,0 +1,24 @@
+# TODO
+
+- [x] Corregir errores de TypeScript detectados en build
+  - [x] `src/components/Header.tsx`: eliminar imports/variables no usadas
+  - [x] `src/components/Hero.tsx`: agregar import faltante
+  - [x] `src/components/Projects.tsx`: eliminar variable no usada
+- [x] Ejecutar `npm run build` para validar compilación
+- [x] Eliminar colores azules de texto — usar grises neutros oscuros
+  - [x] `src/index.css`: section-label → primary-600, section-label-light → white/50
+  - [x] `src/components/Header.tsx`: nav links primary-500 → primary-700
+  - [x] `src/components/Services.tsx`: body text primary-600 → primary-700
+  - [x] `src/components/About.tsx`: body text primary-600 → primary-700, years primary-500 → primary-600
+  - [x] `src/components/Projects.tsx`: body text primary-600 → primary-700
+  - [x] `src/components/Contact.tsx`: body text primary-600 → primary-700, labels primary-400 → primary-600
+- [x] Verificar compilación TypeScript → 0 errores
+- [ ] Rediseño estilo Roessan (manteniendo hero image)
+  - [ ] Header minimal editorial
+  - [ ] Services en estilo limpio/typographic
+  - [ ] About en bloque 3 columnas editorial
+  - [ ] Projects con header protagonista + grilla limpia
+  - [ ] Contacto minimal y legible
+  - [ ] Footer simplificado y profesional
+  - [ ] Ajustes globales en `src/index.css`
+- [ ] Verificación visual final
