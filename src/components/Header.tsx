@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { FiMenu, FiX, FiArrowRight } from 'react-icons/fi'
-import logoGval from '../assets/logo blanco g-val.png'
+
+// IMPORTANTE: Ajusta las rutas según tus nombres de archivo reales
+import logoBlanco from '../assets/logo1b.png'
+import logoNegro from '../assets/logo1.png'
 
 interface HeaderProps {
   isScrolled: boolean 
 }
 
-// Corregido: Ahora el componente recibe isScrolled como argumento
 const Header = ({ isScrolled }: HeaderProps) => { 
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('inicio')
@@ -18,6 +20,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
     { href: '#proyectos', label: 'Proyectos', id: 'proyectos' },
   ]
 
+  // Observador para detectar en qué sección estamos
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -39,22 +42,37 @@ const Header = ({ isScrolled }: HeaderProps) => {
   }, [])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500 ${
       isScrolled 
-        ? 'border-primary-100 bg-white shadow-sm' 
+        ? 'border-gray-100 bg-white shadow-md' 
         : 'border-transparent bg-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
           {/* Logo y Nombre G-VAL */}
-          <a href="#inicio" className="flex items-center space-x-3">
-            <div className="w-11 h-11 bg-primary-900 rounded-sm flex items-center justify-center">
-              <img src={logoGval} alt="G-Val" className="w-8 h-8 object-contain" />
+          <a href="#inicio" className="flex items-center gap-4 group">
+            {/* Contenedor del Logo: Cambia de imagen según el scroll */}
+            <div className="relative h-12 w-auto overflow-hidden">
+              <img 
+                src={isScrolled ? logoNegro : logoBlanco} 
+                alt="G-Val Logo" 
+                className="h-full w-auto object-contain transition-all duration-300 group-hover:scale-105" 
+              />
             </div>
-            <div className="leading-tight">
-              <span className={`text-lg font-black tracking-tight block ${isScrolled ? 'text-primary-900' : 'text-white'}`}>G-VAL</span>
-              <span className={`text-[10px] uppercase tracking-[0.24em] font-semibold ${isScrolled ? 'text-primary-600' : 'text-white/80'}`}>Ingeniería y Construcción</span>
+            
+            {/* Texto del Logo */}
+            <div className="leading-tight border-l pl-4 border-white/20">
+              <span className={`text-xl font-black tracking-tighter block transition-colors duration-300 ${
+                isScrolled ? 'text-slate-900' : 'text-white'
+              }`}>
+                G-VAL
+              </span>
+              <span className={`text-[10px] uppercase tracking-[0.2em] font-bold block transition-colors duration-300 ${
+                isScrolled ? 'text-slate-500' : 'text-white/70'
+              }`}>
+                Ingeniería y Construcción
+              </span>
             </div>
           </a>
 
@@ -66,12 +84,12 @@ const Header = ({ isScrolled }: HeaderProps) => {
                 href={link.href}
                 className={`text-xs font-bold uppercase tracking-[0.16em] transition-all duration-300 relative group ${
                   activeSection === link.id 
-                    ? (isScrolled ? 'text-primary-900' : 'text-white') 
-                    : (isScrolled ? 'text-primary-600 hover:text-primary-900' : 'text-white/70 hover:text-white')
+                    ? (isScrolled ? 'text-slate-900' : 'text-white') 
+                    : (isScrolled ? 'text-slate-500 hover:text-slate-900' : 'text-white/60 hover:text-white')
                 }`}
               >
                 {link.label}
-                <span className={`absolute -bottom-1 left-0 h-[1.5px] transition-all duration-300 ${
+                <span className={`absolute -bottom-1 left-0 h-[2px] transition-all duration-300 ${
                   activeSection === link.id ? 'w-full bg-current' : 'w-0 group-hover:w-full bg-current'
                 }`}></span>
               </a>
@@ -81,7 +99,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
           {/* Botón Contactar */}
           <a
             href="#contactar"
-            className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 bg-primary-900 text-white text-xs font-bold uppercase tracking-[0.16em] hover:bg-accent-500 transition-colors shadow-md active:scale-95"
+            className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 bg-primary-900 text-white text-xs font-bold uppercase tracking-[0.16em] hover:bg-accent-500 transition-all shadow-md active:scale-95"
           >
             <span>Contactar</span>
             <FiArrowRight className="w-3.5 h-3.5" />
@@ -90,7 +108,9 @@ const Header = ({ isScrolled }: HeaderProps) => {
           {/* Botón Menú Móvil */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-primary-900 hover:bg-primary-50' : 'text-white hover:bg-white/10'}`}
+            className={`lg:hidden p-2 rounded-lg transition-colors ${
+              isScrolled ? 'bg-primary-900 hover:bg-slate-100' : 'text-white hover:bg-white/10'
+            }`}
           >
             {mobileOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
           </button>
@@ -98,7 +118,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
 
         {/* Menú Móvil Desplegable */}
         {mobileOpen && (
-          <div className="lg:hidden bg-white border-t border-primary-100 py-6 absolute left-0 right-0 shadow-xl animate-in fade-in slide-in-from-top-4">
+          <div className="lg:hidden bg-white border-t border-gray-100 py-6 absolute left-0 right-0 shadow-2xl animate-in fade-in slide-in-from-top-4">
             <div className="px-6 space-y-2">
               {links.map((link) => (
                 <a
@@ -106,8 +126,8 @@ const Header = ({ isScrolled }: HeaderProps) => {
                   href={link.href}
                   className={`block text-xs font-bold uppercase tracking-[0.16em] py-4 px-4 transition-all ${
                     activeSection === link.id 
-                      ? 'text-primary-900 bg-primary-50 border-l-4 border-primary-900' 
-                      : 'text-primary-600 border-l-4 border-transparent'
+                      ? 'text-slate-900 bg-slate-50 border-l-4 border-slate-900' 
+                      : 'text-slate-500 border-l-4 border-transparent hover:bg-slate-50'
                   }`}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -117,7 +137,7 @@ const Header = ({ isScrolled }: HeaderProps) => {
               <div className="pt-4 px-4">
                 <a
                   href="#contactar"
-                  className="flex items-center justify-center gap-2 px-5 py-3.5 bg-primary-900 text-white text-xs font-bold uppercase tracking-[0.16em] w-full"
+                  className="flex items-center justify-center gap-2 px-5 py-3.5 bg-slate-900 text-white text-xs font-bold uppercase tracking-[0.16em] w-full"
                   onClick={() => setMobileOpen(false)}
                 >
                   <span>Contactar</span>

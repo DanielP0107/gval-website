@@ -65,11 +65,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Modern Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 flex flex-col items-center gap-4">
-        <div className="w-[1px] h-16 bg-gradient-to-b from-accent-500 to-transparent animate-pulse" />
-        <span className="text-[9px] text-white/40 uppercase tracking-[0.3em] [writing-mode:vertical-lr]">Scroll</span>
-      </div>
+      
     </section>
   )
 }

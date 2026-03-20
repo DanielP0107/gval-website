@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FiSend, FiMapPin, FiPhone, FiMail } from 'react-icons/fi'
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -9,18 +10,40 @@ const Contact = () => {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    setStatus('success')
-    setIsSubmitting(false)
-    setFormData({ name: '', email: '', phone: '', message: '' })
-    setTimeout(() => setStatus('idle'), 5000)
+
+    try {
+      // Reemplaza TU_ID_DE_FORMSPREE con el ID que te da Formspree al crear el formulario
+      const response = await fetch("https://formspree.io/f/xpqynyog", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', phone: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      setStatus('error')
+    } finally {
+      setIsSubmitting(false)
+      setTimeout(() => setStatus('idle'), 5000)
+    }
   }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
+
   return (
     <section id="contactar" className="bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24">
@@ -58,6 +81,11 @@ const Contact = () => {
             {status === 'success' && (
               <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-800 text-sm font-medium">
                 ¡Mensaje enviado correctamente! Te contactaremos pronto.
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-800 text-sm font-medium">
+                Hubo un error al enviar el mensaje. Inténtalo de nuevo.
               </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -117,15 +145,15 @@ const Contact = () => {
                 className="btn-solid disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
-                  <>
+                  <span className="flex items-center">
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></div>
                     Enviando...
-                  </>
+                  </span>
                 ) : (
-                  <>
+                  <span className="flex items-center">
                     <FiSend className="w-4 h-4 mr-2" />
                     Enviar Mensaje
-                  </>
+                  </span>
                 )}
               </button>
             </form>
@@ -135,4 +163,5 @@ const Contact = () => {
     </section>
   )
 }
+
 export default Contact
