@@ -1,4 +1,4 @@
-import { FiChevronDown, FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight } from 'react-icons/fi'
 import casaConcon from '../assets/casa concon.png'
 
 const Hero = () => {

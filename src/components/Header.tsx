@@ -6,7 +6,7 @@ interface HeaderProps {
   isScrolled: boolean // Mantenemos la prop por si la usas en otro lado, pero ya no afecta al diseño
 }
 
-const Header = ({ isScrolled }: HeaderProps) => {
+const Header = () => { 
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('inicio')
 
