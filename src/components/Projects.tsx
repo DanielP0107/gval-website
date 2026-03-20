@@ -94,7 +94,7 @@ const Projects = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-xs font-semibold text-primary-400 uppercase tracking-widest mb-4">Proyecto Destacado</p>
+              <p className="text-xs font-semibold text-primary-400 uppercase tracking-widest mb-4">Ultimo Proyecto</p>
               <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
                 Jardín Ñuñoa
               </h3>
