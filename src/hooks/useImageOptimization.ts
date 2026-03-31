@@ -1,10 +1,15 @@
 import { useEffect, useState, type RefObject } from 'react';
 
-// Añadimos el tipo RefObject<HTMLElement> para que acepte imágenes u otros contenedores
-const useImageOptimization = (imageRef: RefObject<Element>) => {
+const useImageOptimization = (imageRef: RefObject<HTMLImageElement>) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
+        // Verificamos que estemos en el navegador
+        if (typeof window === 'undefined' || !window.IntersectionObserver) {
+            setIsVisible(true);
+            return;
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -14,9 +19,7 @@ const useImageOptimization = (imageRef: RefObject<Element>) => {
             });
         });
 
-        // Usamos una variable local para el cleanup (buena práctica en TS)
         const currentRef = imageRef.current;
-
         if (currentRef) {
             observer.observe(currentRef);
         }
