@@ -21,7 +21,7 @@ const Hero = () => {
           <div className="lg:col-span-8 animate-reveal">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-[2px] bg-accent-500" />
-              <span className="text-accent-500 text-[10px] font-black uppercase tracking-[0.4em]">
+              <span className="text-accent-500 text-[30px] font-black uppercase tracking-[0.4em]">
                 Ingeniería de vanguardia
               </span>
             </div>
@@ -36,9 +36,7 @@ const Hero = () => {
                 Ver Proyectos
                 <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="#servicios" className="btn-outline-white">
-                Nuestra Historia
-              </a>
+             
             </div>
           </div>
 
@@ -51,12 +49,12 @@ const Hero = () => {
               <div className="space-y-6">
                 <div>
                   <span className="block text-4xl font-black text-white">+50</span>
-                  <span className="text-[10px] text-accent-500 uppercase font-bold tracking-widest">Proyectos Entregados</span>
+                  <span className="text-[15px] text-accent-500 uppercase font-bold tracking-widest">Proyectos Entregados</span>
                 </div>
                 <div className="w-full h-px bg-white/10" />
                 <div>
                   <span className="block text-4xl font-black text-white">5</span>
-                  <span className="text-[10px] text-accent-500 uppercase font-bold tracking-widest">Años de Experiencia</span>
+                  <span className="text-[15px] text-accent-500 uppercase font-bold tracking-widest">Años de Experiencia</span>
                 </div>
               </div>
             </div>

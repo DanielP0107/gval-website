@@ -1,5 +1,5 @@
 import { FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi'
-import logoGval from '../assets/logo blanco g-val.png'
+import logoGval from '../assets/logo1.png'
 const Footer = () => {
   return (
     <footer className="bg-primary-900 text-white">
@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Logo */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white/10 rounded flex items-center justify-center p-1">
+              <div className="w-10 h-10  rounded flex items-center justify-center p-1">
                 <img src={logoGval} alt="G-Val" className="w-8 h-8 object-contain" />
               </div>
               <div className="leading-tight">
@@ -19,11 +19,12 @@ const Footer = () => {
             <p className="text-primary-400 text-sm leading-relaxed">
               Construyendo con excelencia técnica y compromiso profesional.
             </p>
-            <div className="flex space-x-3">
+
+            {/* <div className="flex space-x-3">
               {[
-                { icon: FiInstagram, href: '#' },
+              { icon: FiInstagram, href: '#' },
                 { icon: FiLinkedin, href: '#' },
-                { icon: FiMail, href: 'mailto:contacto@gvalingenieria.com' },
+                { icon: FiMail, href: 'danieljpr1997@gmail.com' },
               ].map((social, idx) => (
                 <a
                   key={idx}
@@ -33,7 +34,8 @@ const Footer = () => {
                   <social.icon className="w-4 h-4" />
                 </a>
               ))}
-            </div>
+            </div> */}
+            
           </div>
           {/* Links */}
           <div>

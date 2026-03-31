@@ -15,8 +15,8 @@ const Header = ({ isScrolled }: HeaderProps) => {
 
   const links = [
     { href: '#inicio', label: 'Inicio', id: 'inicio' },
-    { href: '#servicios', label: 'Servicios', id: 'servicios' },
     { href: '#historia', label: 'Nosotros', id: 'historia' },
+    { href: '#servicios', label: 'Servicios', id: 'servicios' },
     { href: '#proyectos', label: 'Proyectos', id: 'proyectos' },
   ]
 

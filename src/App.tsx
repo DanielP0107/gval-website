@@ -7,6 +7,8 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton' 
+import Clients from './components/Clients'
+
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -23,7 +25,7 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-white selection:bg-accent-500 selection:text-white">
-      {/* Header recibe el estado del scroll para su transparencia */}
+      {}
       <Header isScrolled={isScrolled} />
       
       <main>
@@ -32,10 +34,11 @@ function App() {
         
         {}
         <div className="relative">
-          <Services />
           <About />
+          <Services />
           <Projects />
           <Contact />
+          <Clients />
         </div>
       </main>
 
