@@ -1,14 +1,6 @@
-import { FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi';
-import logoGval from '../assets/logo blanco g-val.png';
-
+import { FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi'
+import logoGval from '../assets/logo blanco g-val.png'
 const Footer = () => {
-  // Definimos las redes sociales aquí para asegurar que TS detecte su uso
-  const socialLinks = [
-    { Icon: FiInstagram, href: '#' },
-    { Icon: FiLinkedin, href: '#' },
-    { Icon: FiMail, href: 'mailto:contacto@gvalingenieria.com' },
-  ];
-
   return (
     <footer className="bg-primary-900 text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
@@ -28,19 +20,21 @@ const Footer = () => {
               Construyendo con excelencia técnica y compromiso profesional.
             </p>
             <div className="flex space-x-3">
-              {socialLinks.map((social, idx) => (
+              {[
+                { icon: FiInstagram, href: '#' },
+                { icon: FiLinkedin, href: '#' },
+                { icon: FiMail, href: 'mailto:contacto@gvalingenieria.com' },
+              ].map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
                   className="w-10 h-10 border border-primary-700 hover:border-white flex items-center justify-center transition-all hover:bg-white hover:text-primary-900"
                 >
-                  {/* Usamos el componente con mayúscula inicial para que TS lo reconozca */}
-                  <social.Icon className="w-4 h-4" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
           </div>
-
           {/* Links */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-primary-400 mb-6">Navegación</h4>
@@ -56,7 +50,6 @@ const Footer = () => {
               </a>
             ))}
           </div>
-
           {/* Services */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-primary-400 mb-6">Servicios</h4>
@@ -72,18 +65,16 @@ const Footer = () => {
               </p>
             ))}
           </div>
-
           {/* Contact */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-primary-400 mb-6">Contacto</h4>
             <div className="space-y-3 text-sm text-primary-300">
-              <p>Pasaje Gustavo Carrasco 274, Placilla<br />Valparaíso, Chile</p>
+              <p>Av. Principal 123Psje. Gustavo carrasco 274, placilla<br />Valparaíso, Chile</p>
               <p>+569 8189 3633</p>
               <p>gerencia@gvalingenieria.cl</p>
             </div>
           </div>
         </div>
-
         {/* Copyright */}
         <div className="border-t border-primary-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-primary-500">
           <p>&copy; 2024 G-Val Ingeniería y Construcción. Todos los derechos reservados.</p>
@@ -91,7 +82,6 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}
+export default Footer
