@@ -1,11 +1,11 @@
 // 1. IMPORTA LAS IMÁGENES (Asegúrate de que las rutas sean correctas en tu proyecto)
-import logoAsmar from '../assets/asmar.png'
-import logoArmada from '../assets/armada.png'
-import logoEnel from '../assets/enel.png'
+import logoASMAR from '../assets/ASMAR.png'
+import logoArmada from '../assets/Armada.png'
+import logoEnel from '../assets/Enel.png'
 import logoAlianza from '../assets/alianza.jpeg' 
 
 const clients = [
-  { name: 'Asmar', logo: logoAsmar },
+  { name: 'Asmar', logo: logoASMAR },
   { name: 'Armada', logo: logoArmada },
   { name: 'Enel', logo: logoEnel },
   { name: 'Lycée Jean dAlembert', logo: logoAlianza },
