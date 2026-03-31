@@ -1,7 +1,7 @@
-import { useEffect, useState, RefObject } from 'react';
+import { useEffect, useState, type RefObject } from 'react';
 
 // Añadimos el tipo RefObject<HTMLElement> para que acepte imágenes u otros contenedores
-const useImageOptimization = (imageRef: RefObject<HTMLElement>) => {
+const useImageOptimization = (imageRef: RefObject<Element>) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
