@@ -49,7 +49,7 @@ const Projects = () => {
   const [showVideo, setShowVideo] = useState(false)
   return (
     <section id="proyectos" className="bg-white">
-      {/* Header */}
+      {}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-16">
         <p className="section-label">Proyectos</p>
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 leading-tight max-w-4xl">

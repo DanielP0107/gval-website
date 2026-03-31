@@ -22,7 +22,7 @@ const servicesList = [
 ]
 const Services = () => {
   return (
-    <section id="servicios" className="bg-white">
+    <section id="servicios" className="bg-primary-50">
       {/* About strip */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24">
         <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
@@ -35,7 +35,7 @@ const Services = () => {
         </div>
       </div>
       {/* Divider */}
-      <div className="border-t border-primary-100"></div>
+      <div className="border-t border-primary-200"></div>
       {/* Services grid */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24">
         <p className="section-label">Servicios</p>
@@ -46,7 +46,7 @@ const Services = () => {
           {servicesList.map((service, idx) => (
             <div key={idx} className="group">
               <div className="flex items-start space-x-4">
-                <span className="text-sm font-bold text-primary-400 mt-1">0{idx + 1}</span>
+                <span className="text-sm font-bold text-primary-700 mt-1">0{idx + 1}</span>
                 <div>
                   <h3 className="text-lg font-bold text-primary-900 mb-2 group-hover:text-accent-600 transition-colors">
                     {service.title}
