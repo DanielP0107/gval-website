@@ -20,7 +20,7 @@ const Footer = () => {
               Construyendo con excelencia técnica y compromiso profesional.
             </p>
 
-            {/* <div className="flex space-x-3">
+             <div className="flex space-x-3">
               {[
               { icon: FiInstagram, href: '#' },
                 { icon: FiLinkedin, href: '#' },
@@ -34,7 +34,7 @@ const Footer = () => {
                   <social.icon className="w-4 h-4" />
                 </a>
               ))}
-            </div> */}
+            </div> 
             
           </div>
           {/* Links */}
