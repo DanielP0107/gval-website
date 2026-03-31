@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { FiMenu, FiX, FiArrowRight } from 'react-icons/fi'
 
-// IMPORTANTE: Ajusta las rutas según tus nombres de archivo reales
+
 import logoBlanco from '../assets/logo1b.png'
 import logoNegro from '../assets/logo1.png'
 
