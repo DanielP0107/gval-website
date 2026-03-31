@@ -1,6 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, ReactNode } from 'react';
 
-const OptimizedBackground: React.FC<{ imageUrl: string }> = ({ imageUrl, children }) => {
+interface OptimizedBackgroundProps {
+    imageUrl: string;
+    children: ReactNode;  // ← AGREGAR ESTA LÍNEA
+}
+
+const OptimizedBackground: React.FC<OptimizedBackgroundProps> = ({ imageUrl, children }) => {
     const [isImageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {

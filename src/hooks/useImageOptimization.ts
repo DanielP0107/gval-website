@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, RefObject } from 'react';
 
-const useImageOptimization = (imageRef) => {
+// Añadimos el tipo RefObject<HTMLElement> para que acepte imágenes u otros contenedores
+const useImageOptimization = (imageRef: RefObject<HTMLElement>) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -13,13 +14,16 @@ const useImageOptimization = (imageRef) => {
             });
         });
 
-        if (imageRef.current) {
-            observer.observe(imageRef.current);
+        // Usamos una variable local para el cleanup (buena práctica en TS)
+        const currentRef = imageRef.current;
+
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (imageRef.current) {
-                observer.unobserve(imageRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [imageRef]);
