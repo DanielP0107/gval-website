@@ -1,7 +1,7 @@
 // 1. IMPORTA LAS IMÁGENES (Asegúrate de que las rutas sean correctas en tu proyecto)
-import logoAsmar from '../assets/Asmar.png'
-import logoArmada from '../assets/Armada.png'
-import logoEnel from '../assets/Enel.png'
+import logoAsmar from '../assets/asmar.png'
+import logoArmada from '../assets/armada.png'
+import logoEnel from '../assets/enel.png'
 import logoAlianza from '../assets/alianza.jpeg' 
 
 const clients = [
