@@ -1,6 +1,15 @@
 import { FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi'
 import logoGval from '../assets/logo1.png'
+
 const Footer = () => {
+  // 1. Definimos los links fuera del return para mayor claridad
+  // Usamos "Icon" con mayúscula para que TS lo reconozca como componente
+  const socialLinks = [
+    { Icon: FiInstagram, href: '#' },
+    { Icon: FiLinkedin, href: '#' },
+    { Icon: FiMail, href: 'mailto:contacto@gvalingenieria.com' },
+  ]
+
   return (
     <footer className="bg-primary-900 text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
@@ -8,8 +17,9 @@ const Footer = () => {
           {/* Logo */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-15 h-15 rounded flex items-center justify-center p-1">
-                <img src={logoGval} alt="G-Val" className="w-8 h-8 object-contain" />
+              {/* Cambié w-15 a w-14 porque w-15 no existe por defecto en Tailwind */}
+              <div className="w-14 h-14 rounded flex items-center justify-center p-1">
+                <img src={logoGval} alt="G-Val" className="w-10 h-10 object-contain" />
               </div>
               <div className="leading-tight">
                 <span className="text-lg font-bold tracking-tight block">G-VAL</span>
@@ -20,21 +30,19 @@ const Footer = () => {
               Construyendo con excelencia técnica y compromiso profesional.
             </p>
             <div className="flex space-x-3">
-              {[
-                { icon: FiInstagram, href: '#' },
-                { icon: FiLinkedin, href: '#' },
-                { icon: FiMail, href: 'mailto:contacto@gvalingenieria.com' },
-              ].map((social, idx) => (
+              {socialLinks.map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
                   className="w-10 h-10 border border-primary-700 hover:border-white flex items-center justify-center transition-all hover:bg-white hover:text-primary-900"
                 >
-                  <social.icon className="w-4 h-4" />
+                  {/* 2. Aquí está el truco: Usar la propiedad con Mayúscula */}
+                  <social.Icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
           </div>
+
           {/* Links */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-primary-400 mb-6">Navegación</h4>
@@ -50,6 +58,7 @@ const Footer = () => {
               </a>
             ))}
           </div>
+
           {/* Services */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-primary-400 mb-6">Servicios</h4>
@@ -65,16 +74,18 @@ const Footer = () => {
               </p>
             ))}
           </div>
+
           {/* Contact */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-primary-400 mb-6">Contacto</h4>
             <div className="space-y-3 text-sm text-primary-300">
-              <p>Av. Principal 123Psje. Gustavo carrasco 274, placilla<br />Valparaíso, Chile</p>
+              <p>Pasaje Gustavo carrasco 274, Placilla<br />Valparaíso, Chile</p>
               <p>+569 8189 3633</p>
               <p>gerencia@gvalingenieria.cl</p>
             </div>
           </div>
         </div>
+
         {/* Copyright */}
         <div className="border-t border-primary-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-primary-500">
           <p>&copy; 2024 G-Val Ingeniería y Construcción. Todos los derechos reservados.</p>
@@ -84,4 +95,5 @@ const Footer = () => {
     </footer>
   )
 }
+
 export default Footer
