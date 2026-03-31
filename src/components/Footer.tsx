@@ -1,5 +1,5 @@
 import { FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi'
-import logoGval from '../assets/logo blanco g-val.png'
+import logoGval from '../assets/logo1.png'
 const Footer = () => {
   return (
     <footer className="bg-primary-900 text-white">
@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Logo */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white/10 rounded flex items-center justify-center p-1">
+              <div className="w-15 h-15 rounded flex items-center justify-center p-1">
                 <img src={logoGval} alt="G-Val" className="w-8 h-8 object-contain" />
               </div>
               <div className="leading-tight">
