@@ -44,11 +44,11 @@ const Services = () => {
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
           {servicesList.map((service, idx) => (
-            <div key={idx} className="group">
+           <div key={idx} className="group p-6 rounded-lg hover:bg-white hover:shadow-xl transition-all duration-300 cursor-pointer">
               <div className="flex items-start space-x-4">
                 <span className="text-sm font-bold text-primary-700 mt-1">0{idx + 1}</span>
                 <div>
-                  <h3 className="text-lg font-bold text-primary-900 mb-2 group-hover:text-accent-600 transition-colors">
+                  <h3 className="text-lg font-bold text-primary-900 mb-2 group-hover:text-accent-500 transition-colors duration-300">
                     {service.title}
                   </h3>
                   <p className="text-primary-600 leading-relaxed">{service.description}</p>

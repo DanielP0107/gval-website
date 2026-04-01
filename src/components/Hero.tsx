@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
 
           {/* Side Stats/Card (Optional but looks premium) */}
-          <div className="hidden lg:block lg:col-span-4 animate-reveal [animation-delay:200ms]">
+          <div className="hidden lg:block lg:col-span-4 animate-reveal [animation-delay:400ms]">
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-10 rounded-sm">
               <p className="text-white/60 text-sm leading-relaxed mb-8">
                 Especialistas en proyectos residenciales y comerciales de alta complejidad a lo largo de todo Chile.

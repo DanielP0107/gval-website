@@ -34,6 +34,11 @@
   --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -62,5 +67,21 @@
   }
 
 
-  
+  #servicios {
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+
 }
