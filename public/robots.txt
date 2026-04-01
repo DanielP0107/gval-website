@@ -1,0 +1,9 @@
+# Permitir a todos los buscadores
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gval-website.vercel.app/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
