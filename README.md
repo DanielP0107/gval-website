@@ -26,7 +26,7 @@ Esta es una aplicación web moderna diseñada para la presentación de servicios
 ## 📦 Instalación y Uso
 
 1. Clonar el repositorio:
-   git clone https://github.com/DanielP0107/gval.website.git
+   git clone https://github.com/DanielP0107/gval-website
 
 2. Instalar dependencias:
    npm install
