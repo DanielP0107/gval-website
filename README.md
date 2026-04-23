@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# Page G-VAL 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una aplicación web moderna diseñada para la presentación de servicios profesionales, permitiendo a los clientes potenciales establecer contacto directo de manera eficiente.
 
-Currently, two official plugins are available:
+## 📱 Canales de Contacto
+* **WhatsApp:** Integración directa para consultas instantáneas.
+* **Correo Electrónico:** Formulario de contacto integrado.
+* **Formulario de Solicitud:** Sección dedicada para la solicitud formal de servicios.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tecnologías Utilizadas
+* **React + TypeScript:** Para una interfaz de usuario robusta y libre de errores de tipo.
+* **Vite:** Herramienta de construcción de alto rendimiento.
+* **Tailwind CSS:** Para un diseño responsivo y moderno.
 
-## React Compiler
+## ✨ Características
+* **HMR Ultra rápido:** Gracias a Vite.
+* **Seguridad de tipos:** Desarrollado íntegramente con TypeScript.
+* **Interfaz Moderna:** (Aquí puedes poner si usas Tailwind, Material UI, etc.).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Stack Tecnológico
+* **Frontend:** React 18/19
+* **Herramientas de construcción:** Vite
+* **Lenguaje:** TypeScript
+* **Linter:** ESLint (Configuración estricta)
 
-## Expanding the ESLint configuration
+## 📦 Instalación y Uso
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clonar el repositorio:
+   git clone https://github.com/DanielP0107/gval.website.git
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. Instalar dependencias:
+   npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. Iniciar el servidor de desarrollo:
+   npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📝 Notas de configuración
+Este proyecto fue iniciado con la plantilla de Vite + React + TS. Se han optimizado las reglas de ESLint para producción siguiendo las recomendaciones oficiales de análisis estático.
